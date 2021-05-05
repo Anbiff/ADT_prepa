@@ -1,0 +1,488 @@
+* {
+  font-family: 'Work Sans', sans-serif;
+}
+body {
+  background: #F6F6F6;
+}
+a {
+  text-decoration: none
+}
+p {
+  font-family: 'Work Sans', sans-serif;
+  color: #737785;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
+  color: #3A4053;
+}
+h4 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/************************
+Contenedores
+*************************/
+
+.page-wrapper {
+	position: relative;
+	transition: 0.3s;
+	padding-left: 70px;
+}
+
+/************************
+Sidebar
+*************************/
+
+.side-menu .logo {
+    position: relative;
+}
+
+.side-menu .logo-top {
+    opacity: 0;
+    width: 40px;
+    transition: .1s .1s ease-in;
+}
+
+.side-menu .menu-toggle {
+    position: absolute;
+    left: 25%;
+    top: 20%;
+    transition: .2s ease-in;
+    width: 30px;
+}
+
+.side-menu .menu-toggle:hover,
+.side-menu .menu-toggle:focus {
+    background: #323232;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.side-menu {
+    color: #7E828F;
+    background-color: #3A4053;
+    padding: 30px 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    width: 72px;
+    transition: 0.3s;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+.side-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side-menu ul li {
+    margin: 0 12px;
+    transition: ease 0.3s;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.side-menu .item.list {
+	margin-top: 12px;
+	display: block;
+	padding: 5px 5px;
+	border-radius: 5px;
+}
+
+.side-menu li .item.list:hover,
+.side-menu li .item.list:focus {
+    background-color: #242424;
+    color: #f1f1f1;
+    transition: 0.3s;
+}
+
+.side-menu .item.list span {
+    line-height: 0;
+}
+
+.side-menu li:hover span {
+    color: #f1f1f1;
+}
+
+.side-menu .item {
+    transition: 0.3s;
+}
+
+.side-menu .item.list img {
+    width: 24px;
+}
+
+.side-menu ul li i {
+    padding: 0 16px 0 0;
+    font-size: 25px;
+    color: #f1f1f1;
+}
+
+.side-menu ul li span {
+    font-size: 16px;
+    overflow-x: hidden;
+    transition: 0.3s ease-in;
+    color: #f1f1f1;
+    opacity: 0;
+}
+
+.side-menu ul form input {
+    height: 48px;
+    width: 100%;
+    outline: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    background-color: #121619;
+    border: 1px solid #515152;
+    border-radius: 5px;
+}
+
+ ::placeholder {
+    font-size: 16px;
+}
+
+.side-menu ul li.search .item.list {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul .search .item.list:hover {
+    background-color: transparent;
+}
+
+.side-menu ul .search img {
+    position: absolute;
+    top: 45px;
+    left: 10px;
+}
+
+
+/* width */
+
+.side-menu::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+/* Track */
+
+.side-menu::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #121619;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+.side-menu::-webkit-scrollbar-thumb {
+    background: #515152;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+.side-menu::-webkit-scrollbar-thumb:hover {
+    background: #515152;
+}
+
+
+/* ? This is to puch the main page to the side */
+
+.menu-active .page-wrapper {
+    transform: translateX(200px);
+}
+
+.span-active .text,
+.span-active .logo-top {
+    opacity: 1;
+    transition: .2s .1s ease-out;
+}
+
+.menu-active .side-menu {
+    width: 250px;
+}
+
+.toggle-active .side-menu .menu-toggle {
+    right: 5%;
+    transform: translateX(155px) rotate(180deg);
+    transform-origin: 0% 40%;
+    transition: .3s ease-in;
+}
+
+body.body-active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/************************
+ELEMENTOS UI
+*************************/
+
+/* Barras de porcentaje */
+.bar {
+	width: 100%;
+	height: 40px;
+	background: transparent;
+	border: solid 2px #C8CDD9;
+	border-radius: 20px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.bar-nombre {
+	height: 100%;
+	width: 40%;
+	background: #F6F6F6;
+	border-radius: 20px 0 0 20px;
+	border: solid 1px #DFE4E9;
+	color: #737785;
+	font-family: 'Work Sans', sans-serif;
+	padding: 5px 20px;
+	font-size: 15px;
+	position: relative;
+	box-sizing: border-box;
+	float: left;
+}
+.bar-nombre::before {
+	content: '';
+	height: calc(100% + 2px);
+	width: 29px;
+	position: absolute;
+	display: block;
+	background: #f6f6f6;
+	right: -16px;
+	top: -1px;
+	border-radius: 0 50% 50% 0;
+	border: solid 1px #DFE4E9;
+	border-width: 1px 1px 1px 0px;
+}
+.bar-porcentaje {
+	width: 60%;
+	height: 100%;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* top: -36px; */
+	left: 40%;
+	float: left;
+	border-radius: 0 20px 20px 0;
+  overflow: hidden;
+  display: flex;
+}
+.bar-porcentaje-int {
+	height: 100%;
+	display: inline-block;
+	margin: 0;
+	box-sizing: border-box;
+}
+.bar-porcentaje-int:last-child{
+	border-radius: 0 20px 20px 0;
+}
+.bar-porcentaje span{
+  padding: 5px;
+  line-height: 33px;
+}
+.bar-porcentaje-int:first-child span {
+	padding-left: 20px;
+}
+#status1 {
+    width: 27%;
+    background: #94E0AC;
+    border: solid 1px #27B555;
+}
+#status1 span {
+  color: #06872E;
+}
+#status2 {
+    width: 55%;
+    background: #F8D092;
+    border: solid 1px #E89A23;
+}
+#status2 span {
+  color: #8F6200;
+}
+#status3 {
+    width: 18%;
+    background: #FFA18F;
+    border: solid 1px #D92A08;
+}
+#status3 span {
+  color: #C9381C;
+}
+#status4 {
+    width: 75%;
+    background: #86EAFC;
+    border: solid 1px #37AEC3;
+}
+#status4 span {
+  color: #37AEC3;
+}
+#status5 {
+    width: 25%;
+    background: #fff;
+    border: solid 1px #fff;
+}
+#status5 span {
+  color: #737785;
+}
+#status6 {
+    width: 10%;
+    background: #8CDEEE;
+    border: solid 1px #8CDEEE;
+}
+#status6 span {
+  color: #06872E;
+}
+#status7 {
+    width: 20%;
+    background: #26ACFF;
+    border: solid 1px #26ACFF;
+}
+#status7 span {
+  color: #8F6200;
+}
+#status8 {
+    width: 30%;
+    background: #1F6CF0;
+    border: solid 1px #1F6CF0;
+}
+#status8 span {
+  color: #C9381C;
+}
+#status9 {
+    width: 40%;
+    background: #501FF0;
+    border: solid 1px #501FF0;
+}
+#status9 span {
+  color: #37AEC3;
+}
+
+@media all and (max-width: 650px) {
+  .bar {
+    height: 25px;
+    margin-bottom: 30px;
+  }
+  .bar-nombre {
+    position: absolute;
+    height: auto;
+    background: none;
+    border: none;
+    top: -29px;
+    left: 0;
+    padding-left: 0;
+    width: 100%
+  }
+  .bar-nombre::before {
+    display: none;
+  }
+  .bar-porcentaje {
+    width: 100%;
+  }
+  .bar-porcentaje span {
+	  padding: 0px;
+	  line-height: 22px;
+	  bottom: 3px;
+	  position: relative;
+  }
+  .bar-porcentaje-int:first-child span {
+  	padding-left: 0;
+  }
+}
+
+/***************************
+Secciones
+****************************/
+
+.seccion {
+    border-left: solid 1px #c8cdd9;
+}
+
+/* Notificaciones */
+.dot {
+	width: 10px;
+	height: 10px;
+	background: aquamarine;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	bottom: 1px;
+	margin-right: 15px;
+}
+.dot::after {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 20px;
+	background: #7fffd445;
+	border: solid 1px aquamarine;
+	border-radius: 50%;
+	position: relative;
+	top: -5px;
+	left: -5px;
+}
+.notif p {
+	display: inline-block;
+}
+
+/* equipos */
+.card {
+	border: none;
+	border-radius: 10px;
+  min-height: 150px
+}
+#equipos .card .dot {
+	position: relative;
+	top: -9px;
+  left: 4px;
+}
+
+/***************************
+Tablas
+****************************/
+#grid_container {
+    height: 300px;
+    width: 100%;
+}
+.tablaCustom {
+	background: transparent;
+}
+.tablaCustom .dhx_grid-content {
+	background: transparent;
+  border: none;
+}
+.tablaCustom .dhx_header-wrapper {
+	background: transparent;
+}
+.tablaCustom .dhx_grid-header {
+	background: transparent;
+	border: none;
+}
+.tablaCustom .dhx_header-rows {
+	background: transparent;
+}
+.tablaCustom .dhx_header-row:last-child .dhx_grid-header-cell {
+	background: #f6f6f6;
+}
+.tablaCustom .dhx_grid-header-cell {
+	background: white;
+	border: none;
+}
+.tablaCustom .dhx_data-wrap {
+	background: white;
+}
+.tablaCustom .dhx_grid-cell {
+	border: none;
+	border-bottom: solid 1px #d9dde6;
+}
